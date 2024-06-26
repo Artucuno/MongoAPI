@@ -1,0 +1,13 @@
+services:
+  api:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    environment:
+      - MONGO_URL=mongodb://localhost:27017
+      - WEB_IP=0.0.0.0
+      - WEB_PORT=3000
+      - AUTH_SECRET=secret
+      - ARGS_ALLOWED=1
